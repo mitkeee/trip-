@@ -1,5 +1,12 @@
 import React from "react";
 import {PriceofProduct} from './component';
+import { Link, Outlet } from "react-router-dom";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect,
+  } from "react-router-dom";
 
 function  Header(){
     return(
@@ -10,14 +17,26 @@ function  Header(){
         </div>
         <div className="flex items-center gap-8">
         <ul className="flex items-center gap-8 ">
-            <PriceofProduct>Home</PriceofProduct>
-            <PriceofProduct>Menu</PriceofProduct>
-            <PriceofProduct>About Us</PriceofProduct>
-            <PriceofProduct>Services</PriceofProduct>
+        <li>
+        <Link to="/pages">Home</Link>
+      </li>
+            <PriceofProduct>
+                <Link to="/components/HomePage">Home</Link>
+            </PriceofProduct>
+            <PriceofProduct>
+            <Link to="">Menu</Link>
+            </PriceofProduct>
+            <PriceofProduct>
+            <Link to="/components/AboutUs">AboutUs</Link>
+            </PriceofProduct>
+            <PriceofProduct>
+            <Link to="">Services</Link>
+            </PriceofProduct>
         </ul>
     </div>
     </div>
     </header>
+    //<div><Header/> </div>
 ); 
 }       
 export default Header;
