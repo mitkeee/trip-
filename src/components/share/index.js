@@ -1,6 +1,6 @@
 import React from "react";
 //import { Placement } from "./component";
-import "./style.css";;
+//import "./style.css";;
 
 const Homee = () => {
   return (
