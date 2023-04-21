@@ -1,11 +1,10 @@
+import Articles from "./components/Articles";
+import AddArticle from "./components/AddArticles";
+import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import React from "react";
-import Header from "./components/Headerr";
-import Homee from "./components/HomePage";
-import Home from "./pages"
-import AboutUs from "./components/AboutUs"
+import Article from "./components/Article";
 const App = () => {
   return (
     <div className="container">
@@ -13,11 +12,12 @@ const App = () => {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/signin" element={<Login />} />
-          <Route path="/components/HomePage" element={ <Homee/> } />
-          <Route path="/pages" element={ <Home/> } />
-          <Route path="/components/AboutUs" element={ <AboutUs/> } />
+          <Route path="/Article/:id" element={<Article/>} />
+          <Route path="/AddArticles" element={<AddArticle />} />
+          <Route path="/Articles" element={<Articles />} />
+          
         </Routes>
-        <Header/> 
+        <Navbar />
       </Router>
     </div>
   );

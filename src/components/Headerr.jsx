@@ -2,11 +2,8 @@ import React from "react";
 import {PriceofProduct, ListWrapper} from './component';
 import { Link } from "react-router-dom";
 import "./style.css"
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "./../firebaseConfig";
-import { signOut } from "firebase/auth";
+
 function  Header(){
-    const [user] = useAuthState(auth);
     return(
     <header className="fixed z-50 w-screen p-6 px-16 ">
         <div className=" hidden md:flex w-full h-full ">
@@ -33,18 +30,7 @@ function  Header(){
             </PriceofProduct>
         </ul>
         </ListWrapper>
-        <div>
-          {user && (
-            <>
-              <span className="pe-5 ">
-                Welcome  {user.displayName}
-              </span>
-              <button className="btn btn-primary btn-sm me-3"
-              onClick={()=>{signOut(auth)}}
-              >Logout</button>
-            </>
-          )}
-        </div>
+    
     </div>
     </header>
 ); 
