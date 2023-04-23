@@ -32,6 +32,8 @@ export default function Articles() {
             imageUrl,
             createdAt,
             createdBy,
+            userId,
+            likes,
             comments,
           }) => (
             <div className="border mt-3 p-3 bg-light" key={id}>
@@ -59,13 +61,7 @@ export default function Articles() {
                   <h5>{description}</h5>
 
                   
-                    {comments && comments.length > 0 && (
-                      <div className="pe-2">
-                        <p>{comments?.length} comments</p>
-                      </div>
-                    )}
-                  </div>
-                
+                </div>
               </div>
             </div>
           )
@@ -73,4 +69,4 @@ export default function Articles() {
       )}
     </div>
   );
-};
+}

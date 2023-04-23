@@ -4,6 +4,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage, db, auth } from "../firebaseConfig";
 import { toast } from "react-toastify";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 
 export default function AddArticle() {
   const [user] = useAuthState(auth);
@@ -80,6 +81,15 @@ export default function AddArticle() {
   };
 
   return (
+    <div className="border p-3 mt-3 bg-light" style={{ position: "fixed" }}>
+      {!user ? (
+        <>
+          <h2>
+            <Link to="/signin">Login to create article</Link>
+          </h2>
+          Don't have an account? <Link to="/register">Signup</Link>
+        </>
+      ) : (
         <>
           <h2>Create article</h2>
           <div className="form-group">
@@ -129,9 +139,7 @@ export default function AddArticle() {
             Publish
           </button>
         </>
-      );
-    };
-    
-    
-        
-    
+      )}
+    </div>
+  );
+}

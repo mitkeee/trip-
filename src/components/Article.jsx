@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import { auth, db } from "../firebaseConfig";
+import Comment from './Comment';
 
 export default function Article() {
   const { id } = useParams();
@@ -34,7 +35,8 @@ export default function Article() {
             <h4>{article.description}</h4>
 
             
-            
+            {/* comment  */}
+            <Comment id={article.id} />
           </div>
         </div>
       )}
