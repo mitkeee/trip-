@@ -54,13 +54,10 @@ export default function Articles() {
                         <span className="badge bg-primary">{createdBy}</span>
                       )}
                     </div>
-                    
                   </div>
                   <h3>{title}</h3>
                   <p>{createdAt.toDate().toDateString()}</p>
                   <h5>{description}</h5>
-
-                  
                 </div>
               </div>
             </div>

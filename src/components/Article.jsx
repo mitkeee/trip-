@@ -34,7 +34,6 @@ export default function Article() {
             <hr />
             <h4>{article.description}</h4>
 
-            
             {/* comment  */}
             <Comment id={article.id} />
           </div>

@@ -33,6 +33,19 @@ export default function Comment({ id }) {
     }
   };
 
+  // delete comment function
+  const handleDeleteComment = (comment) => {
+    console.log(comment);
+    updateDoc(commentRef, {
+        comments:arrayRemove(comment),
+    })
+    .then((e) => {
+        console.log(e);
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+  };
   return (
     <div>
       Comment
@@ -53,7 +66,13 @@ export default function Comment({ id }) {
                   </span>
                   {comment}
                 </div>
-                
+                <div className="col-1">
+                  {user === currentlyLoggedinUser.uid && (
+                    <button
+                      onClick={() => handleDeleteComment({ commentId, user, comment, userName , createdAt})}
+                    >X</button>
+                  )}
+                </div>
               </div>
             </div>
           ))}
