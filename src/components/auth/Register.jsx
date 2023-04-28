@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -16,9 +15,11 @@ export default function Register() {
       updateProfile(auth.currentUser, { displayName: name });
       navigate("/");
     } catch (error) {
-      toast(error.code, { type: "error" });
+      console.error(error.code);
+      // Handle the error here as needed, e.g. display a message to the user
     }
   };
+  
   return (
     <div className="border p-3 bg-light " style={{ marginTop: 70 }}>
       <h1>Register</h1>

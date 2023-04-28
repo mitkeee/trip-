@@ -19,7 +19,7 @@ export default function Navbar() {
                 <Link to="/components/HomePage">Home</Link>
             </PriceofProduct>
             <PriceofProduct>
-            <Link to="">Menu</Link>
+            <Link to="/signin">Login</Link>
             </PriceofProduct>
             <PriceofProduct>
             <Link to="/AddArticles">AddArticle</Link>

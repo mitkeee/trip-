@@ -13,10 +13,13 @@ export default function Comment({ id }) {
   useEffect(() => {
     const docRef = doc(db, "Articles", id);
     onSnapshot(docRef, (snapshot) => {
-      setComments(snapshot.data().comments);
+      const comments = snapshot.data()?.comments;
+      if (comments) {
+        setComments(comments);
+      }
     });
-  }, []);
-
+  }, [id]);
+  
   const handleChangeComment = (e) => {
     if (e.key === "Enter") {
       updateDoc(commentRef, {
@@ -32,19 +35,17 @@ export default function Comment({ id }) {
       });
     }
   };
-
   // delete comment function
-  const handleDeleteComment = (comment) => {
-    console.log(comment);
+  const handleDeleteComment = (commentId) => {
     updateDoc(commentRef, {
-        comments:arrayRemove(comment),
+      comments: arrayRemove(comments.find((c) => c.commentId === commentId)),
     })
-    .then((e) => {
-        console.log(e);
-    })
-    .catch((error) => {
-        console.log(error);
-    })
+      .then(() => {
+        console.log("Comment deleted successfully");
+      })
+      .catch((error) => {
+        console.log("Error deleting comment: ", error);
+      });  
   };
   return (
     <div>
@@ -69,7 +70,7 @@ export default function Comment({ id }) {
                 <div className="col-1">
                   {user === currentlyLoggedinUser.uid && (
                     <button
-                      onClick={() => handleDeleteComment({ commentId, user, comment, userName , createdAt})}
+                      onClick={() => handleDeleteComment(commentId)}
                     >X</button>
                   )}
                 </div>

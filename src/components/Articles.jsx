@@ -1,6 +1,7 @@
 import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import { auth, db } from "../firebaseConfig";
+import Delete from "./Delete";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 
@@ -33,10 +34,8 @@ export default function Articles() {
             createdAt,
             createdBy,
             userId,
-            likes,
-            comments,
           }) => (
-            <div className="border mt-3 p-3 bg-light" key={id}>
+            <div className="border mt-5 p-5 bg-light" key={id}>
               <div className="row">
                 <div className="col-3">
                   <Link to={`/article/${id}`}>
@@ -54,10 +53,19 @@ export default function Articles() {
                         <span className="badge bg-primary">{createdBy}</span>
                       )}
                     </div>
+                    <div className="col-6 d-flex flex-row-reverse">
+                      {user && user.uid === userId && (
+                        <button >
+                        <Delete id={id} imageUrl={imageUrl}/>
+                        </button>
+                      )}
+                    </div>
                   </div>
                   <h3>{title}</h3>
                   <p>{createdAt.toDate().toDateString()}</p>
                   <h5>{description}</h5>
+
+                  
                 </div>
               </div>
             </div>
