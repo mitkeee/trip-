@@ -1,0 +1,48 @@
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #4070f4;
+}
+.form{
+        background-color: white;
+        max-width: 400px;
+        padding: 30px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+h1{
+    font-size: 20px;
+    font-weight: bold;
+    color: #232836;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
+        
+button{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+    float: right;
+
+    
+}
+.line{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 20px 0px;
+    background-color: #d4d4d4;           
+    }   
+    a{
+        color: darkblue;
+        text-decoration: solid;
+    }
+            

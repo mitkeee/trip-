@@ -4,22 +4,23 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebaseConfig";
 import { signOut } from "firebase/auth";
 import {PriceofProduct, ListWrapper} from './component';
+import "./style.css"
 
 export default function Navbar() {
   const [user] = useAuthState(auth);
   return (
-    <div className="fixed-top border" style={{ backgroundColor: "whitesmoke" }}>
-      <nav className="navbar">
-        <Link className="nav-link" to="/">
-          Home{" "}
-        </Link>
+    <div className="in">
+      <nav className="container">
+      <Link className="nav-link" to ="/">
+      TripAdvice{""}
+      </Link>
         <ListWrapper>
-        <ul className="flex items-center gap-8 ">
+        <ul className="lis">
             <PriceofProduct>
                 <Link to="/components/HomePage">Home</Link>
             </PriceofProduct>
             <PriceofProduct>
-            <Link to="/signin">Login</Link>
+            <Link to="/login">Login</Link>
             </PriceofProduct>
             <PriceofProduct>
             <Link to="/AddArticles">AddArticle</Link>
@@ -32,10 +33,10 @@ export default function Navbar() {
         <div>
           {user && (
             <>
-              <span className="pe-4">
-                Signed is as {user.displayName || user.email}
+              <span className="user">
+                Welcome {user.displayName}
               </span>
-              <button className="btn btn-primary btn-sm me-3"
+              <button className="logg"
               onClick={()=>{signOut(auth)}}
               >Logout</button>
             </>
