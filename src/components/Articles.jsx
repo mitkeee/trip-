@@ -4,6 +4,7 @@ import { auth, db } from "../firebaseConfig";
 import Delete from "./Delete";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import "./addacc.css";
 
 export default function Articles() {
   const [articles, setArticles] = useState([]);
@@ -21,7 +22,7 @@ export default function Articles() {
     });
   }, []);
   return (
-    <div>
+    <div className="">
       {articles.length === 0 ? (
         <p>No articles found!</p>
       ) : (
@@ -35,7 +36,7 @@ export default function Articles() {
             createdBy,
             userId,
           }) => (
-            <div className="border mt-5 p-5 bg-light" key={id}>
+            <div className="MotionDrop " key={id}>
               <div className="row">
                 <div className="col-3">
                   <Link to={`/article/${id}`}>
@@ -46,11 +47,11 @@ export default function Articles() {
                     />
                   </Link>
                 </div>
-                <div className="col-9 ps-3">
+                <div className="col-9 ps-3  ">
                   <div className="row">
                     <div className="col-6">
                       {createdBy && (
-                        <span className="badge bg-primary">{createdBy}</span>
+                        <span className="creator">{createdBy}</span>
                       )}
                     </div>
                     <div className="col-6 d-flex flex-row-reverse">
@@ -64,8 +65,6 @@ export default function Articles() {
                   <h3>{title}</h3>
                   <p>{createdAt.toDate().toDateString()}</p>
                   <h5>{description}</h5>
-
-                  
                 </div>
               </div>
             </div>

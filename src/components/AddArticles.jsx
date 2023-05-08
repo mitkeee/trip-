@@ -4,6 +4,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage, db, auth } from "../firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import "./addacc.css";
 
 export default function AddArticle() {
   const [user] = useAuthState(auth);
@@ -81,47 +82,52 @@ export default function AddArticle() {
   };
 
   return (
-    <div className="border p-3 mt-3 bg-light" style={{ position: "fixed" }}>
+    <div className="razmak">
+    <div className="artic">
       {!user ? (
         <>
           <h2>
-            <Link to="/signin">Login to create article</Link>
+            <Link to="/login">Login to create article</Link>
           </h2>
           Don't have an account? <Link to="/register">Signup</Link>
         </>
       ) : (
         <>
           <h2>Create article</h2>
-          <div className="form-group">
+          
             <label htmlFor="">Title</label>
+            <div className="">
             <input
               type="text"
               name="title"
-              className="form-control"
+              className=""
+              placeholder="Enter Title here"
               value={formData.title}
               onChange={(e) => handleChange(e)}
             />
           </div>
+          <div className="line"></div>
 
           {/* description */}
           <label htmlFor="">Description</label>
           <textarea
             name="description"
-            className="form-control"
+            className="form"
+            placeholder="Enter Description here"
             value={formData.description}
             onChange={(e) => handleChange(e)}
           />
-
+          <div className="line"></div>
           {/* image */}
           <label htmlFor="">Image</label>
           <input
             type="file"
             name="image"
             accept="image/*"
-            className="form-control"
+            className=""
             onChange={(e) => handleImageChange(e)}
           />
-
+          {/*progress bar*/}
           {progress === 0 ? null : (
             <div className="progress">
               <div
@@ -133,13 +139,14 @@ export default function AddArticle() {
             </div>
           )}
           <button
-            className="form-control btn-primary mt-2"
+            className=""
             onClick={handlePublish}
           >
             Publish
           </button>
         </>
       )}
+    </div>
     </div>
   );
 }

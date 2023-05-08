@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import "./login.css";
+
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -16,51 +18,59 @@ export default function Register() {
       navigate("/");
     } catch (error) {
       console.error(error.code);
-      // Handle the error here as needed, e.g. display a message to the user
     }
   };
   
   return (
-    <div className="border p-3 bg-light " style={{ marginTop: 70 }}>
+    <div className="login ">
+      <div className="form">
       <h1>Register</h1>
-      <div className="form-group">
-        <label>Name</label>
+      <div className="formInput">
+        <label>Name:</label>
         <input
           type="text"
           className="form-control"
-          placeholder="Enter your name"
+          placeholder="  Enter your name"
           onChange={(e) => {
             setName(e.target.value);
           }}
         />
       </div>
-      <div className="form-group">
-        <label>Email</label>
+      <div className="line"></div>
+      <div className="formInput">
+        <label>Email:</label>
         <input
           type="email"
           className="form-control"
-          placeholder="Enter your email"
+          placeholder="  Enter your email"
           onChange={(e) => {
             setEmail(e.target.value);
           }}
         />
       </div>
-
-      <div className="form-group">
-        <label>Password</label>
+      <div className="line"></div>
+      <div className="formInput">
+        <label>Password:</label>
         <input
           type="password"
           className="form-control"
-          placeholder="Password"
+          placeholder="  Enter your password"
           onChange={(e) => {
             setPassword(e.target.value);
           }}
         />
       </div>
+      <div className="line"></div>
       <br />
-      <button className="btn btn-primary" onClick={handleSignup}>
+      
+        <p>Have an account?</p>
+        <br/>
+        
+        <a href="./Login">Login here</a>
+      <button className="button" onClick={handleSignup}>
         Register
       </button>
+    </div>
     </div>
   );
 }
