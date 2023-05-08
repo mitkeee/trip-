@@ -28,6 +28,9 @@ export default function Navbar() {
             <PriceofProduct>
             <Link to="/Articles">ViewArticles</Link>
             </PriceofProduct>
+            <PriceofProduct>
+            <Link to="/contactus">Contact us</Link>
+            </PriceofProduct>
         </ul>
         </ListWrapper>
         <div>

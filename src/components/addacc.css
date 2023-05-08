@@ -54,3 +54,18 @@ button{
     }
     body{background-color: #4070f4; }
     .razmak{margin-top: 50px;}
+
+    .lengg{
+        width: 100%;
+    }
+
+    .MotionDrop{
+        border: 1px solid;
+        margin-top: 5px;
+        padding: 5px;
+        background-color: lightgrey;
+    } 
+
+    .creator{
+        
+    }

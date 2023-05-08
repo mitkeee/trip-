@@ -15,6 +15,7 @@ export default function Login() {
         navigate("/");
       } catch (error) {
         console.error(error);
+        alert("Wrong email or password")
       }
     };
     
