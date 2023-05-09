@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "./../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
-//import "./login.css";
+import "./login.css";
 
 export default function Login() {
   let navigate = useNavigate();
@@ -27,7 +27,7 @@ export default function Login() {
         <label> Email</label>
         <input
           type="email"
-          className="form-control"
+          className="lengg"
           placeholder="  Enter your email "
           onChange={(e) => {
             setEmail(e.target.value);
@@ -41,7 +41,7 @@ export default function Login() {
         <label> Password</label>
         <input
           type="password"
-          className="form-control"
+          className="lengg"
           placeholder="  Enter your password "
           onChange={(e) => {
             setPassword(e.target.value);
@@ -57,7 +57,7 @@ export default function Login() {
       </div>
       
       <br />
-      <button onClick={handleLogin}>
+      <button className="button1" onClick={handleLogin}>
         Login
       </button>
       </div>

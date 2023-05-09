@@ -100,7 +100,7 @@ export default function AddArticle() {
             <input
               type="text"
               name="title"
-              className=""
+              className="lengg"
               placeholder="Enter Title here"
               value={formData.title}
               onChange={(e) => handleChange(e)}
@@ -131,7 +131,7 @@ export default function AddArticle() {
           {progress === 0 ? null : (
             <div className="progress">
               <div
-                className="progress-bar progress-bar-striped mt-2"
+                className=""
                 style={{ width: `${progress}%` }}
               >
                 {`uploading image ${progress}%`}
@@ -139,7 +139,7 @@ export default function AddArticle() {
             </div>
           )}
           <button
-            className=""
+          className="button2"
             onClick={handlePublish}
           >
             Publish

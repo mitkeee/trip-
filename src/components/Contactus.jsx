@@ -42,11 +42,6 @@ export default function Contact() {
         console.log("Error adding article", err);
     });
 }
-    
-    
-
-  
-
   return (
     <div className="razmak">
     <div className="artic">
@@ -113,10 +108,10 @@ export default function Contact() {
           />
 
           <button
-            className=""
+            className="button2"
             onClick={handlePublish}
           >
-            Publish
+            Send
           </button>
         </>
     </div>

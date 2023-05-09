@@ -49,13 +49,13 @@ export default function Comment({ id }) {
   };
   return (
     <div>
-      Comment
+      Comments:
       <div className="container">
         {comments !== null &&
-          comments.map(({ commentId, user, comment, userName , createdAt}) => (
+          comments.map(({ commentId, user, comment, userName }) => (
             <div key={commentId}>
-              <div className="border p-2 mt-2 row">
-                <div className="col-11">
+              <div className="com">
+                
                   <span
                     className={`badge ${
                       user === currentlyLoggedinUser.uid
@@ -63,24 +63,21 @@ export default function Comment({ id }) {
                         : "bg-primary"
                     }`}
                   >
-                    {userName}
+                    {userName}:
                   </span>
                   {comment}
-                </div>
-                <div className="col-1">
                   {user === currentlyLoggedinUser.uid && (
-                    <button
+                    <button className="button3"
                       onClick={() => handleDeleteComment(commentId)}
                     >X</button>
                   )}
-                </div>
               </div>
             </div>
           ))}
         {currentlyLoggedinUser && (
           <input
             type="text"
-            className="form-control mt-4 mb-5"
+            className="commentt"
             value={comment}
             onChange={(e) => {
               setComment(e.target.value);

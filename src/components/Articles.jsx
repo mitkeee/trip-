@@ -36,9 +36,8 @@ export default function Articles() {
             createdBy,
             userId,
           }) => (
-            <div className="MotionDrop " key={id}>
-              <div className="row">
-                <div className="col-3">
+            <div className="formm" key={id}>
+                <div className="">
                   <Link to={`/article/${id}`}>
                     <img
                       src={imageUrl}
@@ -46,28 +45,22 @@ export default function Articles() {
                       style={{ height: 180, width: 180 }}
                     />
                   </Link>
-                </div>
-                <div className="col-9 ps-3  ">
-                  <div className="row">
-                    <div className="col-6">
                       {createdBy && (
-                        <span className="creator">{createdBy}</span>
+                        <span className="creator">Created by:{createdBy}</span>
                       )}
-                    </div>
-                    <div className="col-6 d-flex flex-row-reverse">
-                      {user && user.uid === userId && (
-                        <button >
+                    {user && user.uid === userId && (
+                        <button className="">
                         <Delete id={id} imageUrl={imageUrl}/>
                         </button>
                       )}
-                    </div>
+                    <div className="creator">
+             <Link to={`/article/${id}`}>
+                  <span className="text">{title}</span>
+              </Link>  
                   </div>
-                  <h3>{title}</h3>
                   <p>{createdAt.toDate().toDateString()}</p>
-                  <h5>{description}</h5>
                 </div>
               </div>
-            </div>
           )
         )
       )}
