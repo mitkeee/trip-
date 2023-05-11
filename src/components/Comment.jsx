@@ -4,6 +4,7 @@ import { db } from "../firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { v4 as uuidv4 } from "uuid";
 import { auth } from "./../firebaseConfig";
+import "./styling.css";
 
 export default function Comment({ id }) {
   const [comment, setComment] = useState("");
@@ -50,7 +51,7 @@ export default function Comment({ id }) {
   return (
     <div>
       Comments:
-      <div className="container">
+      <div>
         {comments !== null &&
           comments.map(({ commentId, user, comment, userName }) => (
             <div key={commentId}>

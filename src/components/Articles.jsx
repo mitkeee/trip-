@@ -4,7 +4,7 @@ import { auth, db } from "../firebaseConfig";
 import Delete from "./Delete";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import "./addacc.css";
+import "./styling.css";
 
 export default function Articles() {
   const [articles, setArticles] = useState([]);
@@ -36,25 +36,25 @@ export default function Articles() {
             createdBy,
             userId,
           }) => (
-            <div className="formm" key={id}>
-                <div className="">
+            <div className="bakgroundfrom" key={id}>
+                <div>
                   <Link to={`/article/${id}`}>
                     <img
                       src={imageUrl}
                       alt="title"
-                      style={{ height: 180, width: 180 }}
+                      style={{ height: 180, width: 240 }}
                     />
                   </Link>
                       {createdBy && (
                         <span className="creator">Created by:{createdBy}</span>
                       )}
                     {user && user.uid === userId && (
-                        <button className="">
+                        <button className="button3">
                         <Delete id={id} imageUrl={imageUrl}/>
                         </button>
                       )}
                     <div className="creator">
-             <Link to={`/article/${id}`}>
+              <Link to={`/article/${id}`}>
                   <span className="text">{title}</span>
               </Link>  
                   </div>

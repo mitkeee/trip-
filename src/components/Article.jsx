@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import { auth, db } from "../firebaseConfig";
 import Comment from './Comment';
-import "./addacc.css";
+import "./styling.css";
 
 export default function Article() {
   const { id } = useParams();
@@ -18,7 +18,7 @@ export default function Article() {
     });
   }, []);
   return (
-    <div className="">
+    <div>
       {article && (
         <div>
                   <img
@@ -26,14 +26,14 @@ export default function Article() {
                     alt={article.title}
                     className="imag"
                   />
-        <div className="position">
+        <div className="positioning">
           <h2>{article.title}</h2>
           <div> Posted by: {article.createdBy}</div>
           <div> Posted on: {article.createdAt.toDate().toDateString()}</div>
           <h5>Description:</h5>
           <h5>{article.description}</h5>  
         </div>
-          <div className="formm">
+          <div className="bakgroundfrom">
             <Comment id={article.id} />
           </div>
         </div>

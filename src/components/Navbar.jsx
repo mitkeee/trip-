@@ -4,18 +4,18 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebaseConfig";
 import { signOut } from "firebase/auth";
 import {PriceofProduct, ListWrapper} from './component';
-import "./style.css"
+import "./styling.css"
 
 export default function Navbar() {
   const [user] = useAuthState(auth);
   return (
     <div className="in">
-      <nav className="container">
-      <Link className="nav-link" to ="/">
-      TripAdvice{""}
-      </Link>
+      <nav >
         <ListWrapper>
         <ul className="lis">
+        <Link to="/">
+      TripAdvice
+      </Link>
             <PriceofProduct>
                 <Link to="/components/HomePage">Home</Link>
             </PriceofProduct>
@@ -39,7 +39,7 @@ export default function Navbar() {
               <span className="user">
                 Welcome {user.displayName}
               </span>
-              <button className="logg"
+              <button className="button3"
               onClick={()=>{signOut(auth)}}
               >Logout</button>
             </>

@@ -4,7 +4,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage, db, auth } from "../firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import "./addacc.css";
+import "./styling.css";
 
 export default function AddArticle() {
   const [user] = useAuthState(auth);
@@ -83,7 +83,7 @@ export default function AddArticle() {
 
   return (
     <div className="razmak">
-    <div className="artic">
+    <div className="centerFrom">
       {!user ? (
         <>
           <h2>
@@ -95,8 +95,8 @@ export default function AddArticle() {
         <>
           <h2>Create article</h2>
           
-            <label htmlFor="">Title</label>
-            <div className="">
+            <label>Title</label>
+            <div>
             <input
               type="text"
               name="title"
@@ -109,7 +109,7 @@ export default function AddArticle() {
           <div className="line"></div>
 
           {/* description */}
-          <label htmlFor="">Description</label>
+          <label>Description</label>
           <textarea
             name="description"
             className="form"
@@ -119,7 +119,7 @@ export default function AddArticle() {
           />
           <div className="line"></div>
           {/* image */}
-          <label htmlFor="">Image</label>
+          <label>Image</label>
           <input
             type="file"
             name="image"
@@ -129,20 +129,16 @@ export default function AddArticle() {
           />
           {/*progress bar*/}
           {progress === 0 ? null : (
-            <div className="progress">
-              <div
-                className=""
-                style={{ width: `${progress}%` }}
-              >
+            <div>
+              <div style={{ width: `${progress}%` }}>
                 {`uploading image ${progress}%`}
               </div>
             </div>
           )}
           <button
-          className="button2"
+          className="button3"
             onClick={handlePublish}
-          >
-            Publish
+          >Publish
           </button>
         </>
       )}

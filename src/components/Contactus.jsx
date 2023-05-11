@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db, auth } from "../firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
-import "./addacc.css";
+import "./styling.css";
 
 export default function Contact() {
   const [user] = useAuthState(auth);
@@ -44,7 +44,7 @@ export default function Contact() {
 }
   return (
     <div className="razmak">
-    <div className="artic">
+    <div className="centerFrom">
         <>
           <h2>Contact us</h2>
           
@@ -108,7 +108,7 @@ export default function Contact() {
           />
 
           <button
-            className="button2"
+            className="button3"
             onClick={handlePublish}
           >
             Send
