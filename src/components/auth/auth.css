@@ -1,29 +1,27 @@
-.login{
+.Center{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     width: 100%;
-    background-color: #4070f4;
 }
 .form{
-        background-color: white;
-        max-width: 400px;
-        padding: 30px;
-        width: 100%;
-        border-radius: 5px;
-    }
-
-h1{
-    font-size: 20px;
-    font-weight: bold;
-    color: #232836;
-    text-align: center;
-    padding: 20px;
-    margin: auto;
+    max-width: 400px;
+    padding: 30px;
+    width: 100%;
+    border-radius: 5px;
 }
-        
-button{
+
+.input{
+border: none;
+}
+.boxx{
+        width: 100%;
+        text-decoration: none;
+        border: none;
+        height: 30px;
+}
+.button1{
     background-color: black;
     color: white;
     padding: 10px;
@@ -31,8 +29,6 @@ button{
     transition: 0.5s;
     cursor: pointer;
     float: right;
-
-    
 }
 .line{
     position: relative;
@@ -40,9 +36,9 @@ button{
     width: 100%;
     margin: 20px 0px;
     background-color: #d4d4d4;           
-    }   
-    a{
-        color: darkblue;
-        text-decoration: solid;
-    }
+}   
+.darkteks{
+color: darkblue;
+text-decoration: solid;   
+ }
             

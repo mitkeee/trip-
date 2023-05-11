@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
-import "./login.css";
+import "./auth.css";
 
 
 export default function Register() {
@@ -22,14 +22,14 @@ export default function Register() {
   };
   
   return (
-    <div className="login ">
+    <div className="Center ">
       <div className="form">
       <h1>Register</h1>
-      <div className="formInput">
+      <div >
         <label>Name:</label>
         <input
           type="text"
-          className="form-control"
+          className="boxx"
           placeholder="  Enter your name"
           onChange={(e) => {
             setName(e.target.value);
@@ -37,11 +37,11 @@ export default function Register() {
         />
       </div>
       <div className="line"></div>
-      <div className="formInput">
+      <div >
         <label>Email:</label>
         <input
           type="email"
-          className="form-control"
+          className="boxx"
           placeholder="  Enter your email"
           onChange={(e) => {
             setEmail(e.target.value);
@@ -49,25 +49,21 @@ export default function Register() {
         />
       </div>
       <div className="line"></div>
-      <div className="formInput">
+      <div>
         <label>Password:</label>
         <input
           type="password"
-          className="form-control"
+          className="boxx"
           placeholder="  Enter your password"
           onChange={(e) => {
             setPassword(e.target.value);
           }}
         />
       </div>
-      <div className="line"></div>
-      <br />
-      
+      <div className="line"></div> 
         <p>Have an account?</p>
-        <br/>
-        
-        <a href="./Login">Login here</a>
-      <button className="button" onClick={handleSignup}>
+        <a className="darkteks" href="./Login">Login here</a>
+      <button className="button1" onClick={handleSignup}>
         Register
       </button>
     </div>

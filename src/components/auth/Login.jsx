@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "./../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
-//import "./login.css";
+import "./auth.css";
 
 export default function Login() {
   let navigate = useNavigate();
@@ -20,14 +20,14 @@ export default function Login() {
     };
     
   return (
-    <div className="login">
+    <div className="Center">
       <div className="form">
       <h1>Login</h1>
-      <div className="formInput">
+      <div >
         <label> Email</label>
         <input
           type="email"
-          className="form-control"
+          className="boxx"
           placeholder="  Enter your email "
           onChange={(e) => {
             setEmail(e.target.value);
@@ -37,27 +37,24 @@ export default function Login() {
 
       <div className="line"></div>
 
-      <div className="formInput">
+      <div >
         <label> Password</label>
         <input
           type="password"
-          className="form-control"
+          className="boxx"
           placeholder="  Enter your password "
           onChange={(e) => {
             setPassword(e.target.value);
           }}
         />
-      <div className="formInput">
+      <div >
         <div className="line"></div>
         <label>Don't have an account?</label> 
         <br></br>
-        <a href="./register">Register here</a>
+        <a className="darkteks" href="./register">Register here</a>
       </div>
-        
       </div>
-      
-      <br />
-      <button onClick={handleLogin}>
+      <button className="button1" onClick={handleLogin}>
         Login
       </button>
       </div>

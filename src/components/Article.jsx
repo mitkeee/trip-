@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import { auth, db } from "../firebaseConfig";
 import Comment from './Comment';
-import "./addacc.css";
+import "./styling.css";
 
 export default function Article() {
   const { id } = useParams();
@@ -18,23 +18,22 @@ export default function Article() {
     });
   }, []);
   return (
-    <div className="login">
+    <div>
       {article && (
-        <div className="login">
-          <div className="login-3">
-            <img
-              src={article.imageUrl}
-              alt={article.title}
-              style={{ width: "100%", padding: 10 }}
-            />
-          </div>
-          <div className="login">
-            <h2>{article.title}</h2>
-            <h5>Posted by: {article.createdBy}</h5>
-            <div> Posted on: {article.createdAt.toDate().toDateString()}</div>
-            <hr />
-            <h4>{article.description}</h4>
-            {/* comment  */}
+        <div>
+                  <img
+                    src={article.imageUrl}
+                    alt={article.title}
+                    className="imag"
+                  />
+        <div className="positioning">
+          <h2>{article.title}</h2>
+          <div> Posted by: {article.createdBy}</div>
+          <div> Posted on: {article.createdAt.toDate().toDateString()}</div>
+          <h5>Description:</h5>
+          <h5>{article.description}</h5>  
+        </div>
+          <div className="bakgroundfrom">
             <Comment id={article.id} />
           </div>
         </div>
