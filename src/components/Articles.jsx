@@ -2,9 +2,10 @@ import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import { auth, db } from "../firebaseConfig";
 import Delete from "./Delete";
+import LikeArticle from "./LikeArticle";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import "./styling.css";
+import "./style.css";
 
 export default function Articles() {
   const [articles, setArticles] = useState([]);
@@ -30,13 +31,26 @@ export default function Articles() {
           ({
             id,
             title,
-            description,
+            comments,
             imageUrl,
             createdAt,
             createdBy,
+            likes,
             userId,
           }) => (
             <div className="bakgroundfrom" key={id}>
+              <div className="like">
+                {/*number of comments and likes*/}
+              {comments && comments.length >= 0 && (
+                      <div>
+                        <p>{comments?.length} comments</p>
+                      </div>
+                    )}
+                    <div className="">
+                      <p>{likes?.length} likes</p>
+                    </div>
+                   
+                  </div>
                 <div>
                   <Link to={`/article/${id}`}>
                     <img
@@ -45,9 +59,12 @@ export default function Articles() {
                       style={{ height: 180, width: 240 }}
                     />
                   </Link>
+                  {/*like button*/}
+                  {user && <LikeArticle id={id} likes={likes} />}
                       {createdBy && (
-                        <span className="creator">Created by:{createdBy}</span>
+                        <span className="creator">Created by:{createdBy} </span>
                       )}
+                      
                     {user && user.uid === userId && (
                         <button className="button3">
                         <Delete id={id} imageUrl={imageUrl}/>
@@ -55,10 +72,11 @@ export default function Articles() {
                       )}
                     <div className="creator">
               <Link to={`/article/${id}`}>
-                  <span className="text">{title}</span>
+                  <span className="text">{title}</span> 
               </Link>  
                   </div>
-                  <p>{createdAt.toDate().toDateString()}</p>
+                  <p>{createdAt.toDate().toDateString()} </p>
+                  
                 </div>
               </div>
           )

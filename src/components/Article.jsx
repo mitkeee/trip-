@@ -17,6 +17,7 @@ export default function Article() {
       setArticle({ ...snapshot.data(), id: snapshot.id });
     });
   }, []);
+  
   return (
     <div>
       {article && (

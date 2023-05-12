@@ -120,3 +120,6 @@ h1,h2{
 }
 
 .in{background-color: white;}
+.like{
+    float: right;
+}
