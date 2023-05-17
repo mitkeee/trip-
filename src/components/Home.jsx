@@ -1,10 +1,9 @@
 import React from 'react';
-import "./home.css";
-import main from "./photos/main.jpg"
+import "./styling.css";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div>
   <div>
     <div>
     <h1 className="TextMain">"The world is a book, and those who do not travel read only a page." - Saint Augustine</h1>

@@ -1,5 +1,5 @@
-import Articles from "./components/Articles";
-import AddArticle from "./components/AddArticles";
+import Articles from "./components/ArticleDisplay";
+import AddArticle from "./components/Add";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./components/auth/Register";
@@ -7,6 +7,7 @@ import Login from "./components/auth/Login";
 import Article from "./components/Article";
 import Contact from "./components/Contactus";
 import Home from "./components/Home";
+import About from "./components/About";
 const App = () => {
 
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/AddArticles" element={<AddArticle />} />
           <Route path="/Articles" element={<Articles />} />
           <Route path="/Contactus" element={<Contact />} />
+          <Route path="/About" element={<About />} />
         </Routes>
       </Router>
     </div>

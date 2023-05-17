@@ -32,6 +32,9 @@ export default function Navbar() {
             <li className="makeRow">
             <Link to="/contactus" className="PriceofProduct">Contact us</Link>
             </li>
+            <li className="makeRow">
+            <Link to="/About" className="PriceofProduct">About</Link>
+            </li>
         </ul>
             </>
             
@@ -55,6 +58,9 @@ export default function Navbar() {
             </li>
             <li className="makeRow">
             <Link to="/contactus" className="PriceofProduct">Contact us</Link>
+            </li>
+            <li className="makeRow">
+            <Link to="/About" className="PriceofProduct">About</Link>
             </li>
         </ul>
     )}      
