@@ -4,7 +4,7 @@ import { db } from "../firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { v4 as uuidv4 } from "uuid";
 import { auth } from "./../firebaseConfig";
-import "./styling.css";
+import "./style.css";
 
 export default function Comment({ id }) {
   const [comment, setComment] = useState("");

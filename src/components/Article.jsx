@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import { auth, db } from "../firebaseConfig";
 import Comment from './Comment';
-import "./styling.css";
+import "./style.css";
 
 export default function Article() {
   const { id } = useParams();

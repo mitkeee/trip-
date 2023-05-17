@@ -6,14 +6,17 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Article from "./components/Article";
 import Contact from "./components/Contactus";
+
 const App = () => {
+
   return (
     <div className="container">
       <Router>
-      <Navbar />
+        <Navbar/>
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          
           <Route path="/Article/:id" element={<Article/>} />
           <Route path="/AddArticles" element={<AddArticle />} />
           <Route path="/Articles" element={<Articles />} />

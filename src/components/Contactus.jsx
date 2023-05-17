@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db, auth } from "../firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
-import "./styling.css";
+import "./style.css";
 
 export default function Contact() {
   const [user] = useAuthState(auth);

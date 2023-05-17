@@ -3,7 +3,7 @@ import React from "react";
 import { db, storage } from "../firebaseConfig";
 import { toast } from "react-toastify";
 import { deleteObject, ref } from "firebase/storage";
-import "./styling.css";
+import "./style.css";
 
 export default function DeleteArticle({ id, imageUrl }) {
   const handleDelete = async () => {
