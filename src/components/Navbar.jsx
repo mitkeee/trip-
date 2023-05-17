@@ -3,38 +3,14 @@ import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebaseConfig";
 import { signOut } from "firebase/auth";
-import {PriceofProduct, ListWrapper} from './component';
-import "./styling.css"
+import "./style.css"
 
 export default function Navbar() {
   const [user] = useAuthState(auth);
   return (
     <div className="in">
-      <nav >
-        <ListWrapper>
-        <ul className="lis">
-        <Link to="/">
-      TripAdvice
-      </Link>
-            <PriceofProduct>
-                <Link to="/components/HomePage">Home</Link>
-            </PriceofProduct>
-            <PriceofProduct>
-            <Link to="/login">Login</Link>
-            </PriceofProduct>
-            <PriceofProduct>
-            <Link to="/AddArticles">AddArticle</Link>
-            </PriceofProduct>
-            <PriceofProduct>
-            <Link to="/Articles">ViewArticles</Link>
-            </PriceofProduct>
-            <PriceofProduct>
-            <Link to="/contactus">Contact us</Link>
-            </PriceofProduct>
-        </ul>
-        </ListWrapper>
-        <div>
-          {user && (
+
+      {user ? (
             <>
               <span className="user">
                 Welcome {user.displayName}
@@ -42,10 +18,53 @@ export default function Navbar() {
               <button className="button3"
               onClick={()=>{signOut(auth)}}
               >Logout</button>
+              
+          <ul className="lis">
+            <li className="makeRow">
+                <Link to="/Home" className="PriceofProduct">Home</Link>
+            </li>
+            <li className="makeRow">
+            <Link to="/AddArticles" className="PriceofProduct">AddArticle</Link>
+            </li>
+            <li className="makeRow">
+            <Link to="/Articles" className="PriceofProduct">ViewArticles</Link>
+            </li>
+            <li className="makeRow">
+            <Link to="/contactus" className="PriceofProduct">Contact us</Link>
+            </li>
+            <li className="makeRow">
+            <Link to="/About" className="PriceofProduct">About</Link>
+            </li>
+        </ul>
             </>
-          )}
-        </div>
-      </nav>
+            
+          ):(
+          
+        <ul className="lis">
+        <Link to="/" className="PriceofProduct">
+      TripAdvice
+      </Link>
+            <li className="makeRow">
+                <Link to="/Home" className="PriceofProduct">Home</Link>
+            </li>
+            <li className="makeRow">
+            <Link to="/login" className="PriceofProduct">Login</Link>
+            </li>
+            <li className="makeRow">
+            <Link to="/AddArticles" className="PriceofProduct">AddArticle</Link>
+            </li>
+            <li className="makeRow">
+            <Link to="/Articles" className="PriceofProduct">ViewArticles</Link>
+            </li>
+            <li className="makeRow">
+            <Link to="/contactus" className="PriceofProduct">Contact us</Link>
+            </li>
+            <li className="makeRow">
+            <Link to="/About" className="PriceofProduct">About</Link>
+            </li>
+        </ul>
+    )}      
     </div>
+    
   );
 }
