@@ -2,6 +2,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../firebaseConfig";
 import { arrayRemove, arrayUnion, doc, updateDoc } from "firebase/firestore";
+import "./style.css";
 
 export default function LikeArticle({ id, likes }) {
   const [user] = useAuthState(auth);
@@ -33,10 +34,11 @@ export default function LikeArticle({ id, likes }) {
       <i
       style={{
           cursor: "pointer",
-          color: likes?.includes(user.uid) ? "red" : null,
+          color: likes?.includes(user.uid) ? "blue" : null,
+          fontSize: "25px",
         }}
         onClick={handleLike}
-      >X</i>
+      >♥</i>
     </div>
   );
 }

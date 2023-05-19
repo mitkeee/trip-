@@ -24,7 +24,7 @@ export default function Articles() {
   }, []);
   return (
     <div className="">
-      {articles.length === 0 ? (
+      {articles.length === 0 || !user ? (
         <p>No articles found!</p>
       ) : (
         articles.map(

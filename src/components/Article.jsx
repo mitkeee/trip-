@@ -22,21 +22,30 @@ export default function Article() {
     <div>
       {article && (
         <div>
-                  <img
-                    src={article.imageUrl}
-                    alt={article.title}
-                    className="imag"
-                  />
-        <div className="positioning">
-          <h2>{article.title}</h2>
-          <div> Posted by: {article.createdBy}</div>
-          <div> Posted on: {article.createdAt.toDate().toDateString()}</div>
-          <h5>Description:</h5>
-          <h5>{article.description}</h5>  
-        </div>
-          <div className="bakgroundfrom">
-            <Comment id={article.id} />
+          <img
+            src={article.imageUrl}
+            alt={article.title}
+            className="imag"
+          />
+          <div className="positioning">
+            <h2>{article.title}</h2>
+            <div> Posted by: {article.createdBy}</div>
+            <div> Posted on: {article.createdAt.toDate().toDateString()}</div>
+            <h5>Description:</h5>
+            <h5>{article.description}</h5>  
           </div>
+          {user ? (
+            <div className="positioning2">
+              <Comment id={article.id} />
+            </div>
+          ) : (
+            <>
+              <h2>
+                <Link to="/login">Login to create article</Link>
+              </h2>
+              Don't have an account? <Link to="/register">Signup</Link>
+            </>
+          )}
         </div>
       )}
     </div>

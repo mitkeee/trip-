@@ -19,7 +19,7 @@ export default function Navbar() {
               onClick={()=>{signOut(auth)}}
               >Logout</button>
               
-          <ul className="lis">
+          <ul className="">
             <li className="makeRow">
                 <Link to="/Home" className="PriceofProduct">Home</Link>
             </li>
