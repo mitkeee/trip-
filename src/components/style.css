@@ -14,10 +14,12 @@ body{background-color: #062270; }
     }
 .bakgroundfrom{
         background-color: white;
-        width: 100%;
+        width: 50%;
         border: 1px solid;
         margin-top: 5px;
         padding: 5px;
+        position: relative;
+        left: 375px;
     }
 
 h1,h2{
@@ -64,12 +66,16 @@ h1,h2{
     margin: auto; 
 }
      
-.razmak{margin-top: 50px;    }
+.razmak{margin-top: 50px;}
 
 .lengg{
     width: 100%;
     text-decoration: none;
     border: none;    
+}
+.size{
+    width: 20px;
+    height: 500px;
 }
 
 .input{border:none;}
@@ -96,16 +102,24 @@ h1,h2{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 400px;
+    height: 500px;
 }
 .positioning{
-    position:block;
-    top: 150px;
-    right: 300px;
-    font-size: 18px; 
+    position:relative;
+    font-size: 20px; 
     background-color: white;
     padding: 10px; 
-    width: auto;  
+    width: 70%;  
+    left: 16%;
+}
+.positioning2{
+    background-color: white;
+        width: 100%;
+        border: 1px solid;
+        margin-top: 5px;
+        padding: 5px;
+        position: relative;
 }
 
 .creator{

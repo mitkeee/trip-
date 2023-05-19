@@ -1,5 +1,5 @@
 import Articles from "./components/ArticleDisplay";
-import AddArticle from "./components/Add";
+import AddArticle from "./components/AddArticle";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Register from "./components/auth/Register";

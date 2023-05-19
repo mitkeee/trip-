@@ -26,11 +26,11 @@ export default function Register() {
       <div className="form">
       <h1>Register</h1>
       <div >
-        <label>Name:</label>
+        <label>Username:</label>
         <input
           type="text"
           className="boxx"
-          placeholder="  Enter your name"
+          placeholder="  Enter your username"
           onChange={(e) => {
             setName(e.target.value);
           }}
