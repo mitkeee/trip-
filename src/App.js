@@ -14,7 +14,7 @@ const App = () => {
     <div className="container">
       <Router>
         <Navbar/>
-        <Routes>
+        <Routes basename="/trip-">
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/Home" element={<Home/>} />
