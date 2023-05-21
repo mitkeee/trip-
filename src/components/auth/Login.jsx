@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "./../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./auth.css";
 
 export default function Login() {
@@ -51,7 +52,7 @@ export default function Login() {
         <div className="line"></div>
         <label>Don't have an account?</label> 
         <br></br>
-        <a className="darkteks" href="register">Register here</a>
+        <Link to="/register" className="darkteks">Register here</Link>
       </div>
       </div>
       <button className="button1" onClick={handleLogin}>

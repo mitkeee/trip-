@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./auth.css";
 
 
@@ -62,7 +63,7 @@ export default function Register() {
       </div>
       <div className="line"></div> 
         <p>Have an account?</p>
-        <a className="darkteks" href="login">Login here</a>
+        <Link to="/login" className="darkteks">Login here</Link>
       <button className="button1" onClick={handleSignup}>
         Register
       </button>
