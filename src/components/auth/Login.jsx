@@ -51,7 +51,7 @@ export default function Login() {
         <div className="line"></div>
         <label>Don't have an account?</label> 
         <br></br>
-        <a className="darkteks" href="./register">Register here</a>
+        <a className="darkteks" href="register">Register here</a>
       </div>
       </div>
       <button className="button1" onClick={handleLogin}>

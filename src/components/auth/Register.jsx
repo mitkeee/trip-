@@ -62,7 +62,7 @@ export default function Register() {
       </div>
       <div className="line"></div> 
         <p>Have an account?</p>
-        <a className="darkteks" href="./Login">Login here</a>
+        <a className="darkteks" href="login">Login here</a>
       <button className="button1" onClick={handleSignup}>
         Register
       </button>
