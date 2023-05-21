@@ -1,5 +1,6 @@
 {
   "name": "trip",
+  "homepage": "https://mitkeee.github.io/trip-",
   "packageManager": "yarn@3.5.0",
   "dependencies": {
     "bootstrap": "^5.2.3",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "gh-pages": "^5.0.0",
     "install": "^0.13.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.3.1",
