@@ -21,19 +21,19 @@ export default function Navbar() {
               
           <ul className="">
             <li className="makeRow">
-                <Link to="/Home" className="PriceofProduct">Home</Link>
+                <Link to="Home" className="PriceofProduct">Home</Link>
             </li>
             <li className="makeRow">
-            <Link to="/AddArticles" className="PriceofProduct">AddArticle</Link>
+            <Link to="AddArticles" className="PriceofProduct">AddArticle</Link>
             </li>
             <li className="makeRow">
-            <Link to="/Articles" className="PriceofProduct">ViewArticles</Link>
+            <Link to="Articles" className="PriceofProduct">ViewArticles</Link>
             </li>
             <li className="makeRow">
-            <Link to="/contactus" className="PriceofProduct">Contact us</Link>
+            <Link to="contactus" className="PriceofProduct">Contact us</Link>
             </li>
             <li className="makeRow">
-            <Link to="/About" className="PriceofProduct">About</Link>
+            <Link to="About" className="PriceofProduct">About</Link>
             </li>
         </ul>
             </>
@@ -45,22 +45,22 @@ export default function Navbar() {
       TripAdvice
       </Link>
             <li className="makeRow">
-                <Link to="/Home" className="PriceofProduct">Home</Link>
+                <Link to="Home" className="PriceofProduct">Home</Link>
             </li>
             <li className="makeRow">
-            <Link to="/login" className="PriceofProduct">Login</Link>
+            <Link to="login" className="PriceofProduct">Login</Link>
             </li>
             <li className="makeRow">
-            <Link to="/AddArticles" className="PriceofProduct">AddArticle</Link>
+            <Link to="AddArticles" className="PriceofProduct">AddArticle</Link>
             </li>
             <li className="makeRow">
-            <Link to="/Articles" className="PriceofProduct">ViewArticles</Link>
+            <Link to="Articles" className="PriceofProduct">ViewArticles</Link>
             </li>
             <li className="makeRow">
-            <Link to="/contactus" className="PriceofProduct">Contact us</Link>
+            <Link to="contactus" className="PriceofProduct">Contact us</Link>
             </li>
             <li className="makeRow">
-            <Link to="/About" className="PriceofProduct">About</Link>
+            <Link to="About" className="PriceofProduct">About</Link>
             </li>
         </ul>
     )}      
